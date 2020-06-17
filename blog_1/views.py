@@ -17,12 +17,12 @@ class PostListView(ListView):     #<app>/<model>_<viewtype>.html
 	template_name = 'blog_1/home.html'
 	context_object_name = 'posts'
 	paginate_by = 5
+	ordering = ['-date_posted']
 
 class UserPostListView(ListView):     
 	model = blogpost
 	template_name = 'blog_1/user_posts.html'
 	context_object_name = 'posts'
-	ordering = ['-date_posted']
 	paginate_by = 5
 
 	def get_queryset(self):

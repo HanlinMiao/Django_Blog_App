@@ -10,7 +10,7 @@ urlpatterns = [
     path('blogpost/<int:pk>/update/', PostUpdateView.as_view(), name ='blogpost-update'),
     path('blogpost/<int:pk>/delete/', PostDeleteView.as_view(), name ='blogpost-delete'),
     path('about/',views.about, name ='blog-about'),
-
+    
 
 ]
 
