@@ -1,0 +1,13 @@
+{% extends "photo/base.html" %}
+{% block content %}
+<div class = "gallery">
+  {% for photo in photos %}
+  <a href ="{{ photo.image.url }}" data-lightbox = "photo">
+    <img src="{{ photo.image.url }}" alt = "{{photo.title}}" class = "myimg">
+  </a>
+  {% endfor %}
+</div>
+{% endblock content%}
+  
+    
+  

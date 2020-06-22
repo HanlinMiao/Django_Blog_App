@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'photo.apps.PhotoConfig',
     'users.apps.UsersConfig',
     'blog_1.apps.Blog1Config',
     'crispy_forms',
