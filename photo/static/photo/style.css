@@ -22,6 +22,6 @@
 }
 
 .gallery img:hover {
-	filter:grayscale(20%);
+	filter:grayscale(50%);
 	transform: scale(1.1);
 }
