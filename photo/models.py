@@ -1,10 +1,14 @@
 from django.db import models
 from PIL import Image
+from django.urls import reverse
+from django.utils import timezone
+from django.contrib.auth.models import User
 
 
 class photo(models.Model):
 	title = models.CharField(max_length = 100)
 	image = models.ImageField(upload_to='photoGallery/')
+	author = models.ForeignKey(User, default = '0', on_delete = models.CASCADE)
 
 	def __str__(self):
 		return f'{self.title} photo'
@@ -18,5 +22,5 @@ class photo(models.Model):
 			output_size = (300, 300)
 			img.thumbnail(output_size)
 			img.save(self.image.path)
-
-# Create your models here.
+	def get_absolute_url(self):
+		return reverse('photo-gallery')

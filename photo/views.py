@@ -1,4 +1,6 @@
 
+from django.views.generic import (ListView, DetailView, CreateView, UpdateView, DeleteView)
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import photo
 from .forms import *
@@ -20,26 +22,15 @@ def index(request):
 
 	return render(request, 'photo/display_images.html', {'photos': photos})
 
-def gallery_view(request):
-	if request.method == 'POST':
-		form = PhotoUploadForm(request.POST, request.FILES)
+class PhotoCreateView(LoginRequiredMixin, CreateView):
+	model = photo
+	fields = ['title', 'image']
+	def form_valid(self, form):
+		form.instance.author = self.request.user
+		return super().form_valid(form)
 
-		if form.is_valid():
-			form.save()
-			return redirect('success')
-	else:
-			form = PhotoUploadForm()
-	return render(request, 'photo/photo_form.html', {'form': form})
 
 def success(request):
 	return render(request, 'photo/photo_upload_success.html')
 
-
-def display_images(request): 
-  
-    if request.method == 'GET': 
-  
-        # getting all the objects of hotel. 
-        photos = photo.objects.all()  
-        return render(request, 'photo/display_images.html', {'photos' : photos})
 

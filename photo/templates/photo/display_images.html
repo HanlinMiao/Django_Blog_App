@@ -1,13 +1,16 @@
 {% extends "photo/base.html" %}
 {% block content %}
-<div class = "gallery">
   {% for photo in photos %}
-  <a href ="{{ photo.image.url }}" data-lightbox = "photo">
-    <img src="{{ photo.image.url }}" alt = "{{photo.title}}" class = "myimg">
-  </a>
+  <div class = "gallery">
+  	<a href ="{{ photo.image.url }}" data-lightbox = "photo">
+    	<img src="{{ photo.image.url }}" class = "myimg"/> <b><strong> {{photo.title}} </strong></b>
+    	<div class ="fadebox">
+    		<div class = "title text">{{photo.title}}</div>
+    	</div>
+    	<b> some description</b>
+  	</a>
+  </div>
   {% endfor %}
-</div>
-
 			{% if photos.has_previous %}
 		 		<a class = "btn btn-outline-info mb-4" href = "?page=1"> First </a>
 		 		<a class = "btn btn-outline-info mb-4" href = "?page={{ photos.previous_page_number }}"> Previous Page </a>
