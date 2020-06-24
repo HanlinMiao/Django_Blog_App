@@ -1,16 +1,29 @@
+
 {% extends "photo/base.html" %}
 {% block content %}
+
   {% for photo in photos %}
+  <br>
   <div class = "gallery">
-  	<a href ="{{ photo.image.url }}" data-lightbox = "photo">
-    	<img src="{{ photo.image.url }}" class = "myimg"/> <b><strong> {{photo.title}} </strong></b>
+  	<a href ="{{ photo.image.url }}" data-lightbox = "photo" style = "color:black" >
+    	 <img src="{{ photo.image.url }}" class = "myimg"/>
+    </a> 
+      <b style = "color:white">{{photo.title}} : 
+        Some Sort of DESCRIPTION riennbcqirenivqhmericqheriuvehrmviuqemrhiuvehmrivqeirhmviuqermcimhqiruvemiqrhmivq
+      </b>
     	<div class ="fadebox">
-    		<div class = "title text">{{photo.title}}</div>
+    		<div class = "title text">
+    			<p>{{photo.title}} <br>ircneiquhcmiluricfm reiuncm ircneiquhcmiluricfmnfrjvmnrciu,rm;mniunv</p>
+    		</div>
     	</div>
-    	<b> some description</b>
-  	</a>
+    
   </div>
+  <br>
+  <br>
+  <br>
   {% endfor %}
+  <br>
+  <div style = "margin-left: 100px">
 			{% if photos.has_previous %}
 		 		<a class = "btn btn-outline-info mb-4" href = "?page=1"> First </a>
 		 		<a class = "btn btn-outline-info mb-4" href = "?page={{ photos.previous_page_number }}"> Previous Page </a>
@@ -28,8 +41,10 @@
 		 		<a class = "btn btn-outline-info mb-4" href = "?page={{ photos.next_page_number }}">Next</a>
 		 		 <a class = "btn btn-outline-info mb-4" href = "?page={{ photos.paginator.num_pages}}"> Last</a>
 		 	{% endif %}	
+  </div>
 
 {% endblock content%}
+
   
     
   

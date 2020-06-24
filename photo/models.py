@@ -23,4 +23,4 @@ class photo(models.Model):
 			img.thumbnail(output_size)
 			img.save(self.image.path)
 	def get_absolute_url(self):
-		return reverse('photo-gallery')
+		return reverse('success')
