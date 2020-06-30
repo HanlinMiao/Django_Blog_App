@@ -1,0 +1,20 @@
+{% extends "photo/base.html" %}
+{% block content %}
+		<article class="media content-section">
+			<img src = "{{ object.image.url}}" class = "myimg">
+		  <div class="media-body">
+		    <div class="article-metadata">
+		      <a class="mr-2" href="{% url 'user-photo' object.id %}">{{ object.author }}</a>
+		      <small class="text-muted">{{ object.description }}</small>
+		      {% if object.author == user %}
+		      	<div>
+		      	<a class = "btn btn-secondary btn-sm mt-1 mb-1" href = "{% url 'photo-update' object.author.username object.id %}"> Update </a>
+		      	<a class = "btn btn-danger btn-sm mt-1 mb-1" href = "{% url 'photo-delete' object.author.username object.id %}"> Delete </a>
+		      </div>
+		      {% endif %}
+		    </div>
+		    <h2 class="article-title">{{ object.title }}</h2>
+		    <p class="article-content">{{ object.description }}</p>
+		  </div>
+		</article>
+{% endblock content %}

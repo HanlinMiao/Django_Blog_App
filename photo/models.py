@@ -9,6 +9,7 @@ class photo(models.Model):
 	title = models.CharField(max_length = 100)
 	image = models.ImageField(upload_to='photoGallery/')
 	author = models.ForeignKey(User, default = '0', on_delete = models.CASCADE)
+	description = models.TextField(max_length = 100, default = "DESCRIPTION")
 
 	def __str__(self):
 		return f'{self.title} photo'

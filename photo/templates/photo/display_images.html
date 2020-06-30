@@ -3,19 +3,21 @@
 {% block content %}
 
   {% for photo in photos %}
+  <a href = "{% url 'user-photo' photo.author.username %} " style = "color:white"><h3 style = "color:white">Photo by {{photo.author}}<h3><a>
   <br>
   <div class = "gallery">
   	<a href ="{{ photo.image.url }}" data-lightbox = "photo" style = "color:black" >
     	 <img src="{{ photo.image.url }}" class = "myimg"/>
-    </a> 
+    
       <b style = "color:white">{{photo.title}} : 
-        Some Sort of DESCRIPTION riennbcqirenivqhmericqheriuvehrmviuqemrhiuvehmrivqeirhmviuqermcimhqiruvemiqrhmivq
+        {{photo.description}}
       </b>
     	<div class ="fadebox">
     		<div class = "title text">
-    			<p>{{photo.title}} <br>ircneiquhcmiluricfm reiuncm ircneiquhcmiluricfmnfrjvmnrciu,rm;mniunv</p>
+    			<p>{{photo.title}} <br>{{photo.description}}</p>
     		</div>
     	</div>
+    </a> 
     
   </div>
   <br>
