@@ -6,6 +6,17 @@
 		    <div class="article-metadata">
 		      <a class="mr-2" href="{% url 'user-photo' object.id %}">{{ object.author }}</a>
 		      <small class="text-muted">{{ object.description }}</small>
+		      <br>
+		     <form action = "{% url 'like_photo' object.author.username object.id %}" method = 'POST' class = "ui-form">
+		     	{% csrf_token %}
+     			 <input type = 'hidden' name = 'photo_id' value = "{{object.id}}">
+      			{% if user not in object.liked.all %}
+        			<button class = "ui button positive" type = 'submit'> like </button>
+      			{% else %}
+        			<button class = "ui button negative" type = 'submit'> dislike </button>
+      			{% endif %}
+    		</form>
+    		<strong> {{object.liked.all.count}} likes </strong>
 		      {% if object.author == user %}
 		      	<div>
 		      	<a class = "btn btn-secondary btn-sm mt-1 mb-1" href = "{% url 'photo-update' object.author.username object.id %}"> Update </a>

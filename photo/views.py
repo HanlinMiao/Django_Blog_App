@@ -2,8 +2,9 @@
 from django.views.generic import (ListView, DetailView, CreateView, UpdateView, DeleteView)
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
-from django.shortcuts import render, redirect, get_object_or_404
-from .models import photo
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect, get_object_or_404, reverse
+from .models import photo, Like
 from .forms import *
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -23,12 +24,32 @@ def index(request):
 
 	return render(request, 'photo/display_images.html', {'photos': photos})
 
-class PhotoCreateView(LoginRequiredMixin, CreateView):
+def like_photo(request, username, pk):
+	user = request.user
+	
+	if request.method == 'POST':
+		photo_id = request.POST.get('photo_id')
+		photo_obj = photo.objects.get(id=photo_id)
+
+		if user in photo_obj.liked.all():
+			photo_obj.liked.remove(user)
+		else:
+			photo_obj.liked.add(user)
+		like, created = Like.objects.get_or_create(user= user, photo_id = photo_id)
+		if not created:
+			if like.value == 'Like':
+				like.value = 'Unlike'
+			else:
+				like.value = 'Like'
+
+		like.save()
+	return redirect(reverse('photo-detail', kwargs={'pk':photo_id, 'username':photo_obj.author.username}))
+
+class UserPhotoDetailView(DetailView):
 	model = photo
-	fields = ['title', 'image']
-	def form_valid(self, form):
-		form.instance.author = self.request.user
-		return super().form_valid(form)
+def success(request):
+	return render(request, 'photo/photo_upload_success.html')
+
 
 class UserPhotoListView(ListView):     
 	model = photo
@@ -39,10 +60,12 @@ class UserPhotoListView(ListView):
 	def get_queryset(self):
 		user = get_object_or_404(User, username = self.kwargs.get('username'))
 		return photo.objects.filter(author = user)
-
-class UserPhotoDetailView(DetailView):
+class PhotoCreateView(LoginRequiredMixin, CreateView):
 	model = photo
-	
+	fields = ['title', 'image']
+	def form_valid(self, form):
+		form.instance.author = self.request.user
+		return super().form_valid(form)
 
 class UserPhotoUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 	model = photo
@@ -64,7 +87,6 @@ class UserPhotoDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 			return True
 		return False
 
-def success(request):
-	return render(request, 'photo/photo_upload_success.html')
+
 
 
