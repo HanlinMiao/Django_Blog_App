@@ -38,7 +38,7 @@ def like_photo(request, username, pk):
 		like, created = Like.objects.get_or_create(user= user, photo_id = photo_id)
 		if not created:
 			if like.value == 'Like':
-				like.value = 'Unlike'
+				like.value = 'Dislike'
 			else:
 				like.value = 'Like'
 

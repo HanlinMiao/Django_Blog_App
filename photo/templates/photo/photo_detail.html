@@ -1,5 +1,15 @@
+
+
 {% extends "photo/base.html" %}
 {% block content %}
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type = "text/javascript">
+	$(document).ready(function(){
+		$('button').click(function(){
+			$('button').toggleClass('active')
+		})
+	})
+</script>
 		<article class="media content-section">
 			<img src = "{{ object.image.url}}" class = "myimg">
 		  <div class="media-body">
@@ -11,12 +21,13 @@
 		     	{% csrf_token %}
      			 <input type = 'hidden' name = 'photo_id' value = "{{object.id}}">
       			{% if user not in object.liked.all %}
-        			<button class = "ui button positive" type = 'submit'> like </button>
+        		 	<button class= 'button button1' type = 'submit'>like</button>	
       			{% else %}
-        			<button class = "ui button negative" type = 'submit'> dislike </button>
+        			<button class = 'button button2' type = 'submit'> dislike </button>
       			{% endif %}
     		</form>
     		<strong> {{object.liked.all.count}} likes </strong>
+
 		      {% if object.author == user %}
 		      	<div>
 		      	<a class = "btn btn-secondary btn-sm mt-1 mb-1" href = "{% url 'photo-update' object.author.username object.id %}"> Update </a>

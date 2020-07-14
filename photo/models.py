@@ -32,7 +32,7 @@ class photo(models.Model):
 	
 LIKE_CHOICES = (
  ('Like', 'Like'),
- ('Unlike', 'Unlike'),
+ ('Dislike', 'Dislike'),
 
 )
 class Like(models.Model):
