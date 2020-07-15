@@ -8,7 +8,6 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <link rel="stylesheet" type = "text/css" href = "{% static 'blog_1/main.css' %}">
     
     {% if title %}
@@ -28,8 +27,18 @@
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
-              <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
-              <a class="nav-item nav-link" href="{% url 'photo-gallery' %}">Community Photos</a>
+              <a class="nav-item nav-link" href="{% url 'blog-home' %}">Blog</a>
+              <a class="nav-item nav-link" href="{% url 'photo-gallery' %}">Gallery</a>
+              <div class="dropdown">
+                <a class=" nav-item nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  About Me
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="{% url 'professional' %}">Professional</a>
+                  <a class="dropdown-item" href="#">Social</a>
+                  <a class="dropdown-item" href="#">Interests</a>
+                </div>
+              </div>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">

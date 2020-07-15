@@ -12,6 +12,9 @@ def home(request):
     }
     return render(request, 'blog_1/home.html', context)
 
+def professional(request):
+	return render(request,'blog_1/resume.html')
+
 class PostListView(ListView):     #<app>/<model>_<viewtype>.html
 	model = blogpost
 	template_name = 'blog_1/home.html'

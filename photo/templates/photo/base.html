@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" type = "text/css" href = "{% static 'photo/main.css' %}">
     <link rel="stylesheet" type = "text/css" href = "{% static 'photo/style.css' %}">
     <link rel="stylesheet" type = "text/css" href = "{% static 'photo/light.box.min.css' %}">
     <script src = "{% static 'photo/lightbox-plus-jquery.min.js' %}"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
     {% if title %}
     <title>Django Photo - {{title}} </title>
@@ -24,7 +24,7 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="{% url 'photo-gallery' %}">Django Photo</a>
+          <a class="navbar-brand mr-4" href="{% url 'photo-gallery' %}">Asahi Yuukai</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -32,8 +32,28 @@
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
               <a class="nav-item nav-link" href="{% url 'photo-gallery' %}">Gallery</a>
-              <a class="nav-item nav-link" href="#">About</a>
+              <div class="dropdown">
+                <a class=" nav-item nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Navigation
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Polo</a>
+                  <a class="dropdown-item" href="#">Calvin K</a>
+                  <a class="dropdown-item" href="#">Vogue</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <a class=" nav-item nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  About Me
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="{% url 'professional' %}">Professional</a>
+                  <a class="dropdown-item" href="#">Social</a>
+                  <a class="dropdown-item" href="#">Interests</a>
+                </div>
+              </div>
             </div>
+          </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
