@@ -3,6 +3,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.models import User
 from .models import blogpost
+from django.template import RequestContext, Template
+from django.http import HttpResponse
 
 
 
@@ -13,7 +15,7 @@ def home(request):
     return render(request, 'blog_1/home.html', context)
 
 def professional(request):
-	return render(request,'blog_1/resume.html')
+	return render(request, 'blog_1/resume.html')
 
 class PostListView(ListView):     #<app>/<model>_<viewtype>.html
 	model = blogpost

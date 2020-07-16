@@ -1,13 +1,231 @@
-{% extends "blog_1/base.html" %}
+{% extends "blog_1/about.html" %}
+
 {% block content %}
-	<div>
-		<img src="../../media/Farrell.jpg" alt="Monsignor Farrell High School" width="100" height="100">
-	</div>
-	<div>
-		<img src="../../media/Stevens.png" alt="Stevens Institute of Technology" width="100" height="100">
-	</div>
-	<div>
-		<h3>Hanlin's Resume</h3> <button type="submit" onclick="window.open('../../media/Hanlin_Miao_Resume.docx')">Click to Download My Resume</button>
-		<img src="../../media/Resume.png" alt="Resume" width="550" height="600">
+
+{% load static %}
+{% block css %}
+	{{block.super}}
+	<link rel="stylesheet" type = "text/css" href = "{% static 'blog_1/style.css' %}">
+{% endblock %}
+{% block js %}
+	{{block.super}}
+{% endblock %}
+	<div class = "resume">
+		<div class = "resume_left">
+			<div class = "resume_profile">
+				<img src ="../../media/profile_pics/ProfilePic.jpeg" alt = "profile pic" width = "400" height = "800" >
+			</div>
+			<div class = "resume_content">
+				<div class = "resume_item resume_info">
+					<div class= "title">
+						<p class = "bold"> hanlin miao </p>
+						<p class = "regular"> Computer Engineer </p>
+					</div>
+						<ul>
+							<li>
+								<div class ="icon"><i class="fa fa-map-signs" aria-hidden="true"></i></div>
+								<div class = "data">
+									2220 S Service Road, NY <br/> USA
+								</div>
+							</li>
+							<li>
+								<div class ="icon"> <i class="fa fa-mobile fa-2x" aria-hidden="true"></i></div>
+								<div class = "data">
+									+718 913 8546
+								</div>
+							</li>
+							<li>
+								<div class ="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+								<div class = "data">
+									hmiao2@stevens.edu
+								</div>
+							</li>
+							<li>
+								<div class ="icon"><i class="fa fa-wifi" aria-hidden="true"></i></div>
+								<div class = "data">
+									www.hanlinmiao.com
+								</div>
+							</li>
+						</ul>
+				</div>
+				<div class = "resume_item resume_skills">
+					<div class= "title">
+						<p class = "bold"> skill's </p>
+					</div>
+					<ul>
+						<li>
+							<div class = "skill_name">HTML</div>
+							<div class = "skill_progress">
+								<span style="width: 80%;"></span>
+							</div>
+							<div class = "skill_per">80%</div>
+						</li>
+						<li>
+							<div class = "skill_name">Python</div>
+							<div class = "skill_progress">
+								<span style="width: 80%;"></span>
+							</div>
+							<div class = "skill_per">80%</div>
+						</li>
+						<li>
+							<div class = "skill_name">C++</div>
+							<div class = "skill_progress">
+								<span style="width: 80%;"></span>
+							</div>
+							<div class = "skill_per">80%</div>
+						</li>
+						<li>
+							<div class = "skill_name">CSS</div>
+							<div class = "skill_progress">
+								<span style="width: 80%;"></span>
+							</div>
+							<div class = "skill_per">80%</div>
+						</li>
+						<li>
+							<div class = "skill_name">
+								Django
+							</div>
+							<div class = "skill_progress">
+								<span style="width: 80%;"></span>
+							</div>
+							<div class = "skill_per">80%</div>
+						</li>
+					</ul>
+				</div>
+				<div class = "resume_item resume_social">
+					<div class= "title">
+						<p class = "bold"> Social </p>
+					</div>
+					<ul>
+						<li>
+							<div class="icon">
+								<i class="fa fa-facebook-official" aria-hidden="true"></i>
+							</div>
+							<div class = "data">
+								<p class = "semi_bold">
+									Facebook
+								</p>
+								<p>hanlinmiao@facebook</p>
+							</div>
+						</li>
+						<li>
+							<div class="icon">
+								<i class="fa fa-twitter" aria-hidden="true"></i>
+							</div>
+							<div class = "data">
+								<p class = "semi_bold">
+									Twitter
+								</p>
+								<p>hanlinmiao@Twitter</p>
+							</div>
+						</li>
+						<li>
+							<div class="icon">
+								<i class="fa fa-instagram" aria-hidden="true"></i>
+							</div>
+							<div class = "data">
+								<p class = "semi_bold">
+									Instagram
+								</p>
+								<p>hanlinmeow@instagram</p>
+							</div>
+						</li>
+						<li>
+							<div class="icon">
+								<i class="fa fa-linkedin-square" aria-hidden="true"></i>
+							</div>
+							<div class = "data">
+								<p class = "semi_bold">
+									LinkedIn
+								</p>
+								<p>hanlinmiao@Linkedin</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class = "resume_right">
+			<div class = "resume_item resume_about">
+				<div class ="title">
+					<p class ="bold">About Me</p>
+				</div>
+				<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+			</div>
+			<div class = "resume_item resume_work">
+				<div class ="title">
+					<p class ="bold">Work Experience</p>
+				</div>
+				<ul>
+					<li>
+						
+						<div class ="info">
+							<p class ="date">2020.8 - 2020.12</p>
+							<p class="semi_bold">Network to Code</p>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+						</div>
+					</li>
+					<li>
+						<div class ="info">
+							<p class ="date">2019.8 - 2019.12</p>
+							<p class="semi_bold">Lefrak Realty Operations Group</p>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+						</div>
+					</li>
+					<li>
+						
+						<div class ="info">
+							<p class ="date">2019.5 - 2019.8</p>
+							<p class="semi_bold">RGBS Energy Enterprise</p>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class = "resume_item resume_education">
+				<div class ="title">
+					<p class ="bold">Education</p>
+				</div>
+				<ul>
+					<li>
+						
+						<div class ="info">
+							<p class ="date">2017 - 2022</p>
+							<p class="semi_bold">Stevens Institute of Technology</p>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+						</div>
+					</li>
+					<li>
+						
+						<div class ="info">
+							<p class ="date">2013 - 2017</p>
+							<p class="semi_bold">Monsignor Farrell High School</p>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+						</div>
+					</li>
+					<li>
+						
+						<div class ="info">
+							<p class ="date">2018.5 - 2018.7</p>
+							<p class="semi_bold">Tokyo International School, Japan</p>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class = "resume_item resume_hobby">
+				<div class ="title">
+					<p class ="bold">Hobby</p>
+				</div>
+				<ul>
+					<li><i class="fa fa-music" aria-hidden="true"></i></li>
+					<li><i class="fa fa-gamepad" aria-hidden="true"></i></li>
+					<li><i class="fa fa-paint-brush" aria-hidden="true"></i></li>
+					<li><i class="fa fa-podcast" aria-hidden="true"></i></li>
+				</ul>
+			</div>
+		</div>
 	</div>
 {% endblock content %}
+

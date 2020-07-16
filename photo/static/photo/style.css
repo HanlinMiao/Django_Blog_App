@@ -41,6 +41,7 @@
 
 
 .gallery {
+  z-index: 1;
   margin-left: 100px;
   text-align: center;
   object-fit: cover
@@ -120,16 +121,13 @@
 
 
 .bg {
-  
-  background: url('../../media/background.jpg');
-
-  
+  background: url('../../media/background.jpg'); 
   height: 100%; 
-
-  
   background-position: center;
-
   background-size: cover;
 }
 
-
+.gallery .description{
+  color: white;
+  font-size: 10px;
+}

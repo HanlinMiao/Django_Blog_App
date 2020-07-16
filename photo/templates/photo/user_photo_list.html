@@ -2,8 +2,6 @@
 {% block content %}
   <h1 class = "mb-3" style = "color:white">Photos by {{view.kwargs.username}} ({{ page_obj.paginator.count }})</h1> 
   {% for photo in photos %}
-  
-  <br>
   <div class = "gallery">
   	<a href ="{% url 'photo-detail' photo.author.username photo.id %}"  style = "color:black" >
     	 <img src="{{ photo.image.url }}" class = "myimg"/>

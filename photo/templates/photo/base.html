@@ -2,12 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
-
     <link rel="stylesheet" type = "text/css" href = "{% static 'photo/main.css' %}">
     <link rel="stylesheet" type = "text/css" href = "{% static 'photo/style.css' %}">
     <link rel="stylesheet" type = "text/css" href = "{% static 'photo/light.box.min.css' %}">
@@ -20,47 +17,47 @@
     <title>Django Photo </title>
     {% endif %}
 </head>
-<body class = 'bg'>
+<body class = "bg">
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="{% url 'photo-gallery' %}">Asahi Yuukai</a>
+          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Django Blog</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
+              <a class="nav-item nav-link" href="{% url 'blog-home' %}">Blog</a>
               <a class="nav-item nav-link" href="{% url 'photo-gallery' %}">Gallery</a>
               <div class="dropdown">
                 <a class=" nav-item nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Navigation
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Polo</a>
-                  <a class="dropdown-item" href="#">Calvin K</a>
-                  <a class="dropdown-item" href="#">Vogue</a>
+                  <a class="dropdown-item" href="#">People</a>
+                  <a class="dropdown-item" href="#">Scenery</a>
+                  <a class="dropdown-item" href="#">2018 Tokyo Japan</a>
                 </div>
               </div>
-              <div class="dropdown">
+             <div class="dropdown">
                 <a class=" nav-item nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   About Me
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="{% url 'professional' %}">Professional</a>
-                  <a class="dropdown-item" href="#">Social</a>
-                  <a class="dropdown-item" href="#">Interests</a>
+                  <a class="dropdown-item" href="{% url 'professional' %}">Resume&nbsp;&nbsp;<i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
+                  <a class="dropdown-item" href="#">Project&nbsp;&nbsp;<i class="fa fa-university" aria-hidden="true"></i></a>
+                  <a class="dropdown-item" href="#">Podcast&nbsp;&nbsp;<i class="fa fa-podcast" aria-hidden="true"></i></a>
+                  <a class="dropdown-item" href="#">Spotify Music&nbsp;&nbsp;<i class="fa fa-spotify" aria-hidden="true"></i></a>
                 </div>
               </div>
             </div>
-          </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
-              <a class="nav-item nav-link" href=" {% url 'photo-upload' %}">New Photo</a>
+              <a class="nav-item nav-link" href="{% url 'blogpost-create' %}">New Post</a>
                 <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout </a>
-
               {% else %}
                 <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
                 <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
@@ -69,6 +66,9 @@
           </div>
         </div>
       </nav>
+    <br>
+    <br>
+    <br>
     </header>
     <main role="main" class="container">
       <div class="row">
@@ -80,16 +80,16 @@
             </div>
             {% endfor %}
           {% endif %}
-          {% block content %}{% endblock %}
-          
-          
+
+          {% block content %}
+          {% endblock %}
         </div>
         <div class="col-md-4">
           <div class="content-section">
-            <h4>Our Sidebar</h4>
+            <h3>Our Sidebar</h3>
             <p class='text-muted'>You can put any information here you'd like.
               <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Photos</li>
+                <li class="list-group-item list-group-item-light">Latest Posts</li>
                 <li class="list-group-item list-group-item-light">Announcements</li>
                 <li class="list-group-item list-group-item-light">Calendars</li>
                 <li class="list-group-item list-group-item-light">etc</li>
@@ -99,10 +99,12 @@
         </div>
       </div>
     </main>
+    {% block js %}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/acebf0bdfa.js"></script>
+    {% endblock%}
   
 </body>
 </html>
-
