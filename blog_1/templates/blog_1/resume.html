@@ -1,14 +1,9 @@
 {% extends "blog_1/about.html" %}
-
-{% block content %}
-
 {% load static %}
+{% block content %}
 {% block css %}
 	{{block.super}}
 	<link rel="stylesheet" type = "text/css" href = "{% static 'blog_1/style.css' %}">
-{% endblock %}
-{% block js %}
-	{{block.super}}
 {% endblock %}
 	<div class = "resume">
 		<div class = "resume_left">
@@ -19,13 +14,14 @@
 				<div class = "resume_item resume_info">
 					<div class= "title">
 						<p class = "bold"> hanlin miao </p>
-						<p class = "regular"> Computer Engineer </p>
+						<p class = "regular"> Computer Engineering </p>
+						<p class = "regular"> Quantitative Finance </p>
 					</div>
 						<ul>
 							<li>
 								<div class ="icon"><i class="fa fa-map-signs" aria-hidden="true"></i></div>
 								<div class = "data">
-									2220 S Service Road, NY <br/> USA
+									216 New York Ave, Jersey City, NJ<br/> USA
 								</div>
 							</li>
 							<li>
@@ -41,9 +37,9 @@
 								</div>
 							</li>
 							<li>
-								<div class ="icon"><i class="fa fa-wifi" aria-hidden="true"></i></div>
+								<div class ="icon"><i class="fa fa-github" aria-hidden="true"></i></div>
 								<div class = "data">
-									www.hanlinmiao.com
+									https://github.com/HanlinMiao
 								</div>
 							</li>
 						</ul>
@@ -56,16 +52,16 @@
 						<li>
 							<div class = "skill_name">HTML</div>
 							<div class = "skill_progress">
-								<span style="width: 80%;"></span>
+								<span style="width: 75%;"></span>
 							</div>
-							<div class = "skill_per">80%</div>
+							<div class = "skill_per">75%</div>
 						</li>
 						<li>
 							<div class = "skill_name">Python</div>
 							<div class = "skill_progress">
-								<span style="width: 80%;"></span>
+								<span style="width: 70%;"></span>
 							</div>
-							<div class = "skill_per">80%</div>
+							<div class = "skill_per">70%</div>
 						</li>
 						<li>
 							<div class = "skill_name">C++</div>
@@ -77,18 +73,18 @@
 						<li>
 							<div class = "skill_name">CSS</div>
 							<div class = "skill_progress">
-								<span style="width: 80%;"></span>
+								<span style="width: 65%;"></span>
 							</div>
-							<div class = "skill_per">80%</div>
+							<div class = "skill_per">65%</div>
 						</li>
 						<li>
 							<div class = "skill_name">
 								Django
 							</div>
 							<div class = "skill_progress">
-								<span style="width: 80%;"></span>
+								<span style="width: 75%;"></span>
 							</div>
-							<div class = "skill_per">80%</div>
+							<div class = "skill_per">75%</div>
 						</li>
 					</ul>
 				</div>
@@ -105,7 +101,7 @@
 								<p class = "semi_bold">
 									Facebook
 								</p>
-								<p>hanlinmiao@facebook</p>
+								<a href = "https://www.facebook.com/hanlin.miao.5"><p>hanlinmiao@Facebook</p></a>
 							</div>
 						</li>
 						<li>
@@ -127,7 +123,7 @@
 								<p class = "semi_bold">
 									Instagram
 								</p>
-								<p>hanlinmeow@instagram</p>
+								<a href = "https://www.instagram.com/hanlin_meow/"><p>@hanlin_meow</p></a>
 							</div>
 						</li>
 						<li>
@@ -138,7 +134,7 @@
 								<p class = "semi_bold">
 									LinkedIn
 								</p>
-								<p>hanlinmiao@Linkedin</p>
+								<a href = "https://www.linkedin.com/in/hanlin-miao-324404173/">hanlinmiao@Linkedin</p></a>
 							</div>
 						</li>
 					</ul>
@@ -150,7 +146,7 @@
 				<div class ="title">
 					<p class ="bold">About Me</p>
 				</div>
-				<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+				<p>A 4/5 computer engineering major studying at Stevens Institute of Technology</p>
 			</div>
 			<div class = "resume_item resume_work">
 				<div class ="title">
@@ -169,7 +165,11 @@
 						<div class ="info">
 							<p class ="date">2019.8 - 2019.12</p>
 							<p class="semi_bold">Lefrak Realty Operations Group</p>
-							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+							<p>Tested and constructed various versions of the company’s online 2019 Year-End Evaluation Forms using HTML and CSS</p>
+							<p>Spearheaded the design of the Webinar Poster and updated Saba TalentSpace  Quick-Start and Year-End Review Guides for Managers and Employees for better accessibility and readability using Adobe Indesign and photoshop</p>
+							<p>Streamlined HR data output format and managed sensitive employee payroll information with MS Excel and Access</p>
+							<p>Updated HR Internal Database with new employee information on ADP TotalSource platform</p>
+
 						</div>
 					</li>
 					<li>
@@ -177,7 +177,10 @@
 						<div class ="info">
 							<p class ="date">2019.5 - 2019.8</p>
 							<p class="semi_bold">RGBS Energy Enterprise</p>
-							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+							<p>Renovated the company purchase order database and streamlined the purchase order process using Microsoft Excel</p>
+							<p>Corrected flawed Distech Control drawings and assisted in making engineering cut sheets using AutoCAD</p>
+							<p>Installed and troubleshot cold deck temperature sensors in Manhattan Supreme Courthouse</p>
+							<p>Initiated an inventory database to keep track of equipment and materials on the worksite</p>
 						</div>
 					</li>
 				</ul>
@@ -192,7 +195,9 @@
 						<div class ="info">
 							<p class ="date">2017 - 2022</p>
 							<p class="semi_bold">Stevens Institute of Technology</p>
-							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+							<p>Bachelor of Engineering: Computer Engineering</p>
+							<p>Minor: Quantitave Finance</p>
+							<p>Sigma Phi Epislon</p>
 						</div>
 					</li>
 					<li>
@@ -200,7 +205,9 @@
 						<div class ="info">
 							<p class ="date">2013 - 2017</p>
 							<p class="semi_bold">Monsignor Farrell High School</p>
-							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+							<p>Vir Fidelis</p>
+							<p>Scholar</p>
+							<p>National Honor Society President</p>
 						</div>
 					</li>
 					<li>
@@ -208,7 +215,9 @@
 						<div class ="info">
 							<p class ="date">2018.5 - 2018.7</p>
 							<p class="semi_bold">Tokyo International School, Japan</p>
-							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+							<p>Completed 6 weeks of intensive Japanese language and culture courses</p>
+							<p>Overcame the language barrier to adjust to living with a host family</p>
+							<p>Partnered with a college student from Japan to engage in intercultural learning activities</p>
 						</div>
 					</li>
 				</ul>

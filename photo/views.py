@@ -62,7 +62,7 @@ class UserPhotoListView(ListView):
 		return photo.objects.filter(author = user)
 class PhotoCreateView(LoginRequiredMixin, CreateView):
 	model = photo
-	fields = ['title', 'image']
+	fields = ['title', 'image', 'description']
 	def form_valid(self, form):
 		form.instance.author = self.request.user
 		return super().form_valid(form)
